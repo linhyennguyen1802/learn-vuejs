@@ -12,7 +12,7 @@ export default {
 <template>
   <!-- App bao gồm header và phần RouterView -->
   <header>
-    <div class="wrapper">
+    <div class="wrapper-header">
       <img alt="Luma logo" class="logo" src="/luma_icon.svg" width="80" />
 
       <div class="menu">
@@ -42,7 +42,7 @@ export default {
 </template>
 
 <style scoped>
-.wrapper {
+.wrapper-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -76,13 +76,13 @@ nav a.router-link-exact-active:hover {
 
 nav a {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.6rem;
   outline: none;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
   font-family: 'Work Sans', sans-serif;
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--vt-c-black);
 
@@ -102,8 +102,8 @@ nav a:first-of-type {
 }
 
 .cart-button span {
-  font-size: 0.9rem;
-  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  padding-left: 1rem;
   font-weight: 600;
 }
 </style>

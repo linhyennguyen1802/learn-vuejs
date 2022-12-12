@@ -11,16 +11,18 @@ export default {
 
 
 <template>
-    <button v-if="buttonColor === 'black'" class="button-black">
+    <button v-if="buttonColor === 'black'" class="button-hover button-black">
         <div class="button-label">
             {{ labelText }}
         </div>
+        <img class="button-img" src="/white-arrow-right.svg" />
     </button>
 
-    <button v-else class="button-white">
+    <button v-else class=" button-hover button-white">
         <div class="button-label">
             {{ labelText }}
         </div>
+        <img class="button-img" src="/black-arrow-right.svg" />
     </button>
 
 </template>
@@ -40,9 +42,8 @@ export default {
     color: black;
     border: none;
     cursor: pointer;
-    justify-content: center;
-    animation: moveButton 2s;
-    animation-iteration-count: 1;
+
+
 }
 
 .button-black {
@@ -51,26 +52,32 @@ export default {
 }
 
 .button-label {
-    margin-right: 1.5rem;
+    margin-right: 2rem;
     text-transform: uppercase;
     font-family: 'Work Sans', sans-serif;
     font-weight: 900;
     font-size: 1.6rem;
-    text-align: center;
 
 }
 
-@keyframes moveButton {
-    0% {
-        transform: translateY(20%)
-    }
+.button-hover>.button-img {
+    transform: translateX(0%);
 
-    50% {
-        transform: translateY(1%)
-    }
+}
 
-    100% {
-        transform: translateY(0%);
-    }
+.button-hover>.button-img::before {
+    transform: translateX(0%);
+
+}
+
+.button-hover:hover>.button-img {
+    transform: translateX(60%);
+    transition: all .3s ease;
+}
+
+
+.button-hover:hover>.button-img::before {
+    transform: translateX(60%);
+    transition: all .3s ease;
 }
 </style>
