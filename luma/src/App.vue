@@ -1,8 +1,12 @@
 <script  lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import { totalInBag } from "./stores/app";
 
 
 export default {
+  data() {
+    return { totalInBag }
+  }
 
 }
 
@@ -26,7 +30,7 @@ export default {
         </nav>
         <button class="cart-button">
           <img src="/cart.png" width="16" />
-          <span>0</span>
+          <span>{{ totalInBag.count }}</span>
         </button>
       </div>
     </div>
@@ -42,6 +46,14 @@ export default {
 </template>
 
 <style scoped>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: white;
+
+}
+
 .wrapper-header {
   display: flex;
   flex-direction: row;

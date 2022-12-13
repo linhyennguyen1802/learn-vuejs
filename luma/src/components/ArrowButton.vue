@@ -1,5 +1,6 @@
 <script lang="ts">
 export default {
+
     props: {
         labelText: String,
         buttonColor: String,
